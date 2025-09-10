@@ -7,7 +7,7 @@ const isDev = process.env.NODE_ENV !== 'production'
 // Filter out verbose messages
 const filterVerbose = winston.format((info) => {
   const verbosePatterns = [
-  /mongoose.*connected/i, 
+  /mongoose.*connected/i,
     /listening on/i,
     /server running/i,
     /health check/i,
