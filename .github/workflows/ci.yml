@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master, '**' ]
+  pull_request:
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install dependencies
+        run: |
+          cd services/auth-service && npm ci || true
+          cd ../passport-service && npm ci || true
+          cd ../document-service && npm ci || true
+          cd ../notification-service && npm ci || true
+      - name: Lint
+        run: |
+          cd services/auth-service && npm run lint || true
+          cd ../passport-service && npm run lint || true
+          cd ../document-service && npm run lint || true
+          cd ../notification-service && npm run lint || true
+      - name: Test
+        run: |
+          cd services/auth-service && npm test -- --ci --passWithNoTests
+          cd ../passport-service && npm test -- --ci --passWithNoTests
+          cd ../document-service && npm test -- --ci --passWithNoTests
+          cd ../notification-service && npm test -- --ci --passWithNoTests
