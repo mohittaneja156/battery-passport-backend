@@ -1,0 +1,24 @@
+{
+  "name": "battery-passport-backend",
+  "version": "1.0.0",
+  "description": "Battery Passport Backend - Microservices Architecture",
+  "scripts": {
+    "test": "node test-all.ps1 unit",
+    "test:unit": "node test-all.ps1 unit",
+    "test:integration": "node test-all.ps1 integration",
+    "test:all": "node test-all.ps1 all",
+    "test:auth": "cd services/auth-service && npm test",
+    "test:document": "cd services/document-service && npm test",
+    "test:passport": "cd services/passport-service && npm test",
+    "test:notification": "cd services/notification-service && npm test",
+    "start": "docker-compose up -d",
+    "stop": "docker-compose down",
+    "logs": "docker-compose logs -f",
+    "build": "docker-compose build",
+    "dev": "docker-compose up --build"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}
