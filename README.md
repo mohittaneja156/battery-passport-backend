@@ -233,10 +233,6 @@ battery-passport-backend/
     └── notification-service/   # Email notifications via Kafka
 ```
 
-## 🎯 Submission Guidelines
-
-This project is **submission-ready** with the following key features demonstrated:
-
 ### ✅ Technical Requirements Met:
 - [x] **Microservices Architecture**: 4 independent services
 - [x] **API Documentation**: Swagger/OpenAPI on each service
@@ -250,7 +246,7 @@ This project is **submission-ready** with the following key features demonstrate
 - [x] **Error Handling**: Global error middleware
 - [x] **Security**: Input validation, rate limiting, CORS
 
-### 🔧 Setup for Evaluation:
+### 🔧 Setup:
 1. **Clone the repository**
 2. **Create `.env` file** with required environment variables (see above)
 3. **Run with Docker**: `docker-compose up --build`
@@ -265,13 +261,3 @@ This project is **submission-ready** with the following key features demonstrate
 - **Security Best Practices**: JWT authentication, input validation
 - **Developer Experience**: Clear documentation, easy setup, comprehensive testing
 - **Real-world Patterns**: Event-driven architecture, microservices communication
-
-### 🔍 What Evaluators Should Look For:
-1. **Code Quality**: Clean, well-structured, and documented code
-2. **Architecture**: Proper separation of concerns and microservices patterns
-3. **API Design**: RESTful APIs with proper HTTP status codes
-4. **Error Handling**: Comprehensive error management across services
-5. **Testing**: Unit tests and integration test examples
-6. **Documentation**: Clear README and inline code documentation
-7. **Logging**: Structured logging for debugging and monitoring
-8. **Security**: Authentication, authorization, and data validation
