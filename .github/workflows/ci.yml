@@ -10,17 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: cd services/auth-service && npm install
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install dependencies
+      - name: Install dependencies for all services
         run: |
-          cd services/auth-service && npm ci || true
-          cd ../passport-service && npm ci || true
-          cd ../document-service && npm ci || true
-          cd ../notification-service && npm ci || true
+          cd services/auth-service && npm install
+          cd ../passport-service && npm install
+          cd ../document-service && npm install
+          cd ../notification-service && npm install
       - name: Lint
         run: |
           cd services/auth-service && npm run lint || true
