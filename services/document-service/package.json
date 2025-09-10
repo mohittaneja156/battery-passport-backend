@@ -34,3 +34,5 @@
     "supertest": "^6.3.4"
   }
 }
+
+    "type": "module",
